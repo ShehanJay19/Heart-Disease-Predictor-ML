@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Predictor</title>
+</head>
+<body>
+    <h1>Welcome to Heart Disease Predictor</h1>
+    <div class ="form-container">
+        <form action="/predict" method="POST">
+            <lable>Age: </lable>
+            <input type="number" name="age" required>
+            <br>
+
+            <lable>Gender: </lable>
+            <select name="sex" required>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+            </select>
+            <br>
+
+            <label>Total Cholesterol: </lable>
+            <input type="number" name="total_cholesterol" required>
+            <br>
+            
+            <label>HDL Cholesterol: </lable>
+            <input type="number" name="HDL" required>
+            <br>
+
+            <label>Smoker: </label>
+            <select name="smoker" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <br>
+
+            <label>Blood Pressure Medicine: </label>
+            <select name="bp_medicine" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <br>
+           <label>Diabetics:</label>
+              <select name="diabetic" required>
+                 <option value="1">Yes</option>
+                 <option value="0">No</option>
+                </select>
+            <br>
+           <button type="submit">Predict Risk</button>
+                
+
+        </form>
+        
+    </div>
+
+</body>
+</html>
