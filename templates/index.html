@@ -13,11 +13,15 @@
     <h1>Welcome to Heart Disease Predictor</h1>
     <div class ="form-container">
         <form action="/predict" method="POST">
-            <lable>Age: </lable>
+
+            <label>Name</label>
+             <input type="text" name ="name" required> 
+             <br> 
+            <label>Age: </label>
             <input type="number" name="age" required>
             <br>
 
-            <lable>Gender: </lable>
+            <label>Gender: </label>
             <select name="sex" required>
             <option value="1">Male</option>
             <option value="0">Female</option>

@@ -17,4 +17,16 @@ def predict():
     
     result=request.form
     
-    name
+    name=result['name'] 
+    gender=float(result['sex'])
+    age=float(result['age'])
+    tc=float(result['total_cholesterol'])
+    hdl=float(result['HDL'])
+    smoker=float(result['smoker'])
+    bp_medicine=float(result['bp_medicine'])
+    diabetic=float(result['diabetic'])
+    
+    return "Hello, {}".format(name)
+
+
+app.run(debug=True)
