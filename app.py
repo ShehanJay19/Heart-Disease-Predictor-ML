@@ -4,7 +4,7 @@ import numpy as np
 
 model=joblib.load('heart_risk_prediction_regression_model.sav')
 
-app(Flask(__name__))
+app=(Flask(__name__))
 
 @app.route('/')
 def index():
