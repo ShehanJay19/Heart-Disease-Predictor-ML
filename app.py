@@ -2,7 +2,7 @@ from flask import Flask,render_template,request
 import joblib
 import numpy as np
 
-model=joblib.load('heart_risk_prediction_regression_model.sav')
+model=joblib.load('heart-risk-reg-model.sav')
 
 app=(Flask(__name__))
 
@@ -26,7 +26,19 @@ def predict():
     bp_medicine=float(result['bp_medicine'])
     diabetic=float(result['diabetic'])
     
-    return "Hello, {}".format(name)
+    test_data=np.array([gender,age,tc,hdl,smoker,bp_medicine,diabetic]).reshape(1,-1)
+    
+    prediction=model.predict(test_data)
+    pred_arr = np.asarray(prediction).ravel()
+    if pred_arr.size == 0:
+        risk_value = float(prediction)
+    else:
+        risk_value = float(pred_arr[0])
 
+    
+    
+    resultDict={"name":name,"risk":round(risk_value,2)}
+    
+    return render_template('result.html',result=resultDict)
 
-app.run(debug=True)
+app.run(debug=True,port=5001)
